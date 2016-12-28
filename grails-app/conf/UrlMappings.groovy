@@ -2,13 +2,15 @@ class UrlMappings {
 
 	static mappings = {
 
-        "/$controller/$action?/$id?(.$format)?"{
-            constraints {
-                // apply constraints here
-            }
-        }
+      "/todos" (controller: "toDo") {
+          action=[POST:"store",GET:"list"]
 
-        "/"(view:"/login/index")
+      }
+
+
+        "/"(view:"/login/index")    
+        "404" (view: '/error')
+
         "500"(view:'/error')
 	}
 
